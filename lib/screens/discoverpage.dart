@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -14,12 +15,33 @@ class _DiscoverState extends State<Discover> {
     List<Widget> items;
     items = [
       imageContainer(),
+      SizedBox(
+        width: 30.0.w,
+      ),
       imageContainer(),
+      SizedBox(
+        width: 30.0.w,
+      ),
       imageContainer(),
+      SizedBox(
+        width: 30.0.w,
+      ),
       imageContainer(),
+      SizedBox(
+        width: 30.0.w,
+      ),
       imageContainer(),
+      SizedBox(
+        width: 30.0.w,
+      ),
       imageContainer(),
+      SizedBox(
+        width: 30.0.w,
+      ),
       imageContainer(),
+      SizedBox(
+        width: 30.0.w,
+      ),
       imageContainer(),
     ];
     return Scaffold(
@@ -57,13 +79,13 @@ class _DiscoverState extends State<Discover> {
                 Icon(Icons.search_rounded, color: Colors.white)
               ],
             ),
-            ListView.builder(
+            SizedBox(
+              height: 50.0.h,
+            ),
+            SingleChildScrollView(
               scrollDirection: Axis.horizontal,
-              itemCount: items.length,
-              itemBuilder: (context, index) {
-                return ListView();
-              },
-            )
+              child: Row(children: items),
+            ),
           ],
         ),
       ),
@@ -73,16 +95,20 @@ class _DiscoverState extends State<Discover> {
 
 Widget imageContainer() {
   return Container(
-    height: 50.h,
-    width: 50.h,
+    height: 400.0,
+    width: 350,
     decoration: BoxDecoration(
-      color: Color(0x00000000),
-      borderRadius: BorderRadius.circular(10.0.r),
+      borderRadius: BorderRadius.circular(10.r),
+      color: Color(0x306c6c6c),
     ),
     child: Column(
       children: [
-        Image(
-          image: AssetImage("images/darkwatch.jpg"),
+        Container(
+          height: 350,
+          child: Image(
+            image: AssetImage("images/n1.png"),
+            fit: BoxFit.cover,
+          ),
         ),
         Text(
           'Title',
