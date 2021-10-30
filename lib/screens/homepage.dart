@@ -29,7 +29,7 @@ class _HomePageState extends State<HomePage> {
                       style: TextStyle(color: Colors.white, fontSize: 60.0.sp),
                     ),
                     Text(
-                      "Shop",
+                      "Buy",
                       style: TextStyle(color: Colors.white, fontSize: 60.0.sp),
                     ),
                   ],
@@ -38,7 +38,7 @@ class _HomePageState extends State<HomePage> {
                   child: Container(
                     height: 470.0,
                     child: Image(
-                      image: AssetImage("images/py.png"),
+                      image: AssetImage("images/darkwatch.jpg"),
                       fit: BoxFit.fitHeight,
                     ),
                   ),
