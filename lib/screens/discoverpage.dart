@@ -1,3 +1,4 @@
+import 'package:contactapp/data/data.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -10,40 +11,18 @@ class Discover extends StatefulWidget {
 }
 
 class _DiscoverState extends State<Discover> {
+  List<Data> data = [
+    Data(title: "Smart", img: AssetImage("images/n1.png"), price: "#500"),
+    Data(title: "Smart", img: AssetImage("images/n2.png"), price: "#500"),
+    Data(title: "Smart", img: AssetImage("images/n3.png"), price: "#500"),
+    Data(title: "Smart", img: AssetImage("images/e1.png"), price: "#500"),
+    Data(title: "Smart", img: AssetImage("images/e2.png"), price: "#500"),
+    Data(title: "Smart", img: AssetImage("images/j1.png"), price: "#500"),
+    Data(title: "Smart", img: AssetImage("images/k.png"), price: "#500"),
+  ];
+
   @override
   Widget build(BuildContext context) {
-    List<Widget> items;
-    items = [
-      imageContainer(),
-      SizedBox(
-        width: 30.0.w,
-      ),
-      imageContainer(),
-      SizedBox(
-        width: 30.0.w,
-      ),
-      imageContainer(),
-      SizedBox(
-        width: 30.0.w,
-      ),
-      imageContainer(),
-      SizedBox(
-        width: 30.0.w,
-      ),
-      imageContainer(),
-      SizedBox(
-        width: 30.0.w,
-      ),
-      imageContainer(),
-      SizedBox(
-        width: 30.0.w,
-      ),
-      imageContainer(),
-      SizedBox(
-        width: 30.0.w,
-      ),
-      imageContainer(),
-    ];
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
@@ -84,7 +63,41 @@ class _DiscoverState extends State<Discover> {
             ),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
-              child: Row(children: items),
+              child: Row(children: [
+                imageContainer(
+                  title: "Smart",
+                  img: AssetImage("images/n1.png"),
+                ),
+                SizedBox(width: 10.0.h),
+                imageContainer(
+                  title: "Smart",
+                  img: AssetImage("images/n1.png"),
+                ),
+                SizedBox(width: 10.0.h),
+                imageContainer(
+                  title: "Smart",
+                  img: AssetImage("images/n1.png"),
+                ),
+                SizedBox(width: 10.0.h),
+                imageContainer(
+                  title: "Smart",
+                  img: AssetImage("images/n1.png"),
+                ),
+                imageContainer(
+                  title: "Smart",
+                  img: AssetImage("images/n1.png"),
+                ),
+                SizedBox(width: 10.0.h),
+                imageContainer(
+                  title: "Smart",
+                  img: AssetImage("images/n1.png"),
+                ),
+                SizedBox(width: 10.0.h),
+                imageContainer(
+                  title: "Smart",
+                  img: AssetImage("images/n1.png"),
+                ),
+              ]),
             ),
           ],
         ),
@@ -93,10 +106,13 @@ class _DiscoverState extends State<Discover> {
   }
 }
 
-Widget imageContainer() {
+Widget imageContainer({
+  String title,
+  ImageProvider img,
+}) {
   return Container(
-    height: 400.0,
-    width: 350,
+    height: 360.0.h,
+    width: 350.w,
     decoration: BoxDecoration(
       borderRadius: BorderRadius.circular(10.r),
       color: Color(0x306c6c6c),
@@ -104,14 +120,14 @@ Widget imageContainer() {
     child: Column(
       children: [
         Container(
-          height: 350,
+          height: 320.h,
           child: Image(
-            image: AssetImage("images/n1.png"),
+            image: img,
             fit: BoxFit.cover,
           ),
         ),
         Text(
-          'Title',
+          title,
           style: TextStyle(
               color: Colors.white,
               fontSize: 20.sp,
@@ -121,3 +137,27 @@ Widget imageContainer() {
     ),
   );
 }
+
+//
+//
+// ListView.builder(
+// //shrinkWrap: true,
+// scrollDirection: Axis.vertical,
+// itemCount: data.length,
+// itemBuilder: (context, index) {
+// return ListTile(
+// leading: Container(
+// height: 20.0,
+// width: 20.0,
+// decoration: BoxDecoration(
+// borderRadius: BorderRadius.circular(10.r),
+// color: Color(0x306c6c6c),
+// ),
+// child: Image(image: data[index].img),
+// ),
+// title: Text(data[index].title),
+// subtitle: Text(data[index].price),
+// trailing: Icon(Icons.favorite_border_outlined),
+// );
+// },
+// ),
