@@ -12,9 +12,11 @@ class Discover extends StatefulWidget {
 
 class _DiscoverState extends State<Discover> {
   List<Data> data = [
+    Data(title: "Smart", img: AssetImage("images/j2.png"), price: "#15,00"),
     Data(title: "Smart", img: AssetImage("images/e2.png"), price: "#5,000"),
     Data(title: "Smart", img: AssetImage("images/k.png"), price: "#800"),
     Data(title: "Smart", img: AssetImage("images/n2.png"), price: "#300"),
+    Data(title: "Smart", img: AssetImage("images/j3.png"), price: "#15,00"),
     Data(title: "Smart", img: AssetImage("images/n3.png"), price: "#2,000"),
     Data(title: "Smart", img: AssetImage("images/n1.png"), price: "#500"),
     Data(title: "Smart", img: AssetImage("images/e1.png"), price: "#7,000"),
@@ -61,44 +63,23 @@ class _DiscoverState extends State<Discover> {
             SizedBox(
               height: 30.0.h,
             ),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(children: [
-                imageContainer(
-                  title: "Smart",
-                  img: AssetImage("images/n1.png"),
-                ),
-                SizedBox(width: 10.0.w),
-                imageContainer(
-                  title: "Smart",
-                  img: AssetImage("images/n1.png"),
-                ),
-                SizedBox(width: 10.0.w),
-                imageContainer(
-                  title: "Smart",
-                  img: AssetImage("images/n1.png"),
-                ),
-                SizedBox(width: 10.0.w),
-                imageContainer(
-                  title: "Smart",
-                  img: AssetImage("images/n1.png"),
-                ),
-                SizedBox(width: 10.0.w),
-                imageContainer(
-                  title: "Smart",
-                  img: AssetImage("images/n1.png"),
-                ),
-                SizedBox(width: 10.0.w),
-                imageContainer(
-                  title: "Smart",
-                  img: AssetImage("images/n1.png"),
-                ),
-                SizedBox(width: 10.0.h),
-                imageContainer(
-                  title: "Smart",
-                  img: AssetImage("images/n1.png"),
-                ),
-              ]),
+            Container(
+              height: 350.h,
+              width: 320.w,
+              child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: data.length,
+                  itemBuilder: (context, index) {
+                    return Row(
+                      children: [
+                        imageContainer(
+                          title: data[index].title,
+                          img: data[index].img,
+                        ),
+                        SizedBox(width: 10.0),
+                      ],
+                    );
+                  }),
             ),
             SizedBox(height: 20.0.h),
             Container(
@@ -189,3 +170,43 @@ Widget imageContainer({
     ),
   );
 }
+
+// SingleChildScrollView(
+// scrollDirection: Axis.horizontal,
+// child: Row(children: [
+// imageContainer(
+// title: "Smart",
+// img: AssetImage("images/n1.png"),
+// ),
+// SizedBox(width: 10.0.w),
+// imageContainer(
+// title: "Smart",
+// img: AssetImage("images/n1.png"),
+// ),
+// SizedBox(width: 10.0.w),
+// imageContainer(
+// title: "Smart",
+// img: AssetImage("images/n1.png"),
+// ),
+// SizedBox(width: 10.0.w),
+// imageContainer(
+// title: "Smart",
+// img: AssetImage("images/n1.png"),
+// ),
+// SizedBox(width: 10.0.w),
+// imageContainer(
+// title: "Smart",
+// img: AssetImage("images/n1.png"),
+// ),
+// SizedBox(width: 10.0.w),
+// imageContainer(
+// title: "Smart",
+// img: AssetImage("images/n1.png"),
+// ),
+// SizedBox(width: 10.0.h),
+// imageContainer(
+// title: "Smart",
+// img: AssetImage("images/n1.png"),
+// ),
+// ]),
+//),
