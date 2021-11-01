@@ -12,13 +12,13 @@ class Discover extends StatefulWidget {
 
 class _DiscoverState extends State<Discover> {
   List<Data> data = [
+    Data(title: "Smart", img: AssetImage("images/e2.png"), price: "#5,000"),
+    Data(title: "Smart", img: AssetImage("images/k.png"), price: "#800"),
+    Data(title: "Smart", img: AssetImage("images/n2.png"), price: "#300"),
+    Data(title: "Smart", img: AssetImage("images/n3.png"), price: "#2,000"),
     Data(title: "Smart", img: AssetImage("images/n1.png"), price: "#500"),
-    Data(title: "Smart", img: AssetImage("images/n2.png"), price: "#500"),
-    Data(title: "Smart", img: AssetImage("images/n3.png"), price: "#500"),
-    Data(title: "Smart", img: AssetImage("images/e1.png"), price: "#500"),
-    Data(title: "Smart", img: AssetImage("images/e2.png"), price: "#500"),
-    Data(title: "Smart", img: AssetImage("images/j1.png"), price: "#500"),
-    Data(title: "Smart", img: AssetImage("images/k.png"), price: "#500"),
+    Data(title: "Smart", img: AssetImage("images/e1.png"), price: "#7,000"),
+    Data(title: "Smart", img: AssetImage("images/j1.png"), price: "#15,00"),
   ];
 
   @override
@@ -59,7 +59,7 @@ class _DiscoverState extends State<Discover> {
               ],
             ),
             SizedBox(
-              height: 50.0.h,
+              height: 30.0.h,
             ),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
@@ -68,26 +68,27 @@ class _DiscoverState extends State<Discover> {
                   title: "Smart",
                   img: AssetImage("images/n1.png"),
                 ),
-                SizedBox(width: 10.0.h),
+                SizedBox(width: 10.0.w),
                 imageContainer(
                   title: "Smart",
                   img: AssetImage("images/n1.png"),
                 ),
-                SizedBox(width: 10.0.h),
+                SizedBox(width: 10.0.w),
                 imageContainer(
                   title: "Smart",
                   img: AssetImage("images/n1.png"),
                 ),
-                SizedBox(width: 10.0.h),
+                SizedBox(width: 10.0.w),
                 imageContainer(
                   title: "Smart",
                   img: AssetImage("images/n1.png"),
                 ),
+                SizedBox(width: 10.0.w),
                 imageContainer(
                   title: "Smart",
                   img: AssetImage("images/n1.png"),
                 ),
-                SizedBox(width: 10.0.h),
+                SizedBox(width: 10.0.w),
                 imageContainer(
                   title: "Smart",
                   img: AssetImage("images/n1.png"),
@@ -98,6 +99,52 @@ class _DiscoverState extends State<Discover> {
                   img: AssetImage("images/n1.png"),
                 ),
               ]),
+            ),
+            SizedBox(height: 20.0.h),
+            Container(
+              height: 100.h,
+              child: ListView.builder(
+                //shrinkWrap: true,
+                scrollDirection: Axis.vertical,
+                itemCount: data.length,
+                itemBuilder: (context, index) {
+                  return Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          Container(
+                            height: 100.0,
+                            width: 100.0,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10.r),
+                              color: Color(0x306c6c6c),
+                            ),
+                            child: Image(image: data[index].img),
+                          ),
+                          Column(
+                            children: [
+                              Text(
+                                data[index].title,
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              Text(
+                                data[index].price,
+                                style: TextStyle(color: Colors.white),
+                              ),
+                            ],
+                          ),
+                          Icon(
+                            Icons.favorite_border_outlined,
+                            color: Colors.white,
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 10.0.h),
+                    ],
+                  );
+                },
+              ),
             ),
           ],
         ),
@@ -111,16 +158,16 @@ Widget imageContainer({
   ImageProvider img,
 }) {
   return Container(
-    height: 360.0.h,
-    width: 350.w,
+    height: 340.0.h,
+    width: 320.w,
     decoration: BoxDecoration(
-      borderRadius: BorderRadius.circular(10.r),
+      borderRadius: BorderRadius.circular(60.r),
       color: Color(0x306c6c6c),
     ),
     child: Column(
       children: [
         Container(
-          height: 320.h,
+          height: 300.h,
           child: Image(
             image: img,
             fit: BoxFit.cover,
@@ -137,27 +184,3 @@ Widget imageContainer({
     ),
   );
 }
-
-//
-//
-// ListView.builder(
-// //shrinkWrap: true,
-// scrollDirection: Axis.vertical,
-// itemCount: data.length,
-// itemBuilder: (context, index) {
-// return ListTile(
-// leading: Container(
-// height: 20.0,
-// width: 20.0,
-// decoration: BoxDecoration(
-// borderRadius: BorderRadius.circular(10.r),
-// color: Color(0x306c6c6c),
-// ),
-// child: Image(image: data[index].img),
-// ),
-// title: Text(data[index].title),
-// subtitle: Text(data[index].price),
-// trailing: Icon(Icons.favorite_border_outlined),
-// );
-// },
-// ),
