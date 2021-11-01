@@ -109,7 +109,7 @@ class _DiscoverState extends State<Discover> {
                 itemCount: data.length,
                 itemBuilder: (context, index) {
                   return Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    // crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       Row(
                         children: [
@@ -122,11 +122,15 @@ class _DiscoverState extends State<Discover> {
                             ),
                             child: Image(image: data[index].img),
                           ),
+                          SizedBox(width: 50.0.w),
                           Column(
                             children: [
                               Text(
                                 data[index].title,
-                                style: TextStyle(color: Colors.white),
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20.sp),
                               ),
                               Text(
                                 data[index].price,
@@ -134,6 +138,7 @@ class _DiscoverState extends State<Discover> {
                               ),
                             ],
                           ),
+                          SizedBox(width: 100.0.w),
                           Icon(
                             Icons.favorite_border_outlined,
                             color: Colors.white,
