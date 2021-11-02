@@ -16,13 +16,13 @@ class Discover extends StatefulWidget {
 class _DiscoverState extends State<Discover> {
   List<Data> data = [
     Data(title: "Smart", img: AssetImage("images/j2.png"), price: "#15,00"),
-    Data(title: "Smart", img: AssetImage("images/e2.png"), price: "#5,000"),
-    Data(title: "Smart", img: AssetImage("images/k.png"), price: "#800"),
-    Data(title: "Smart", img: AssetImage("images/n2.png"), price: "#300"),
+    Data(title: "quantum", img: AssetImage("images/e2.png"), price: "#5,000"),
+    Data(title: "Lofi", img: AssetImage("images/k.png"), price: "#800"),
+    Data(title: "Epic", img: AssetImage("images/n2.png"), price: "#300"),
     Data(title: "Smart", img: AssetImage("images/j3.png"), price: "#15,00"),
-    Data(title: "Smart", img: AssetImage("images/n3.png"), price: "#2,000"),
-    Data(title: "Smart", img: AssetImage("images/n1.png"), price: "#500"),
-    Data(title: "Smart", img: AssetImage("images/e1.png"), price: "#7,000"),
+    Data(title: "Epic", img: AssetImage("images/n3.png"), price: "#2,000"),
+    Data(title: "Epic", img: AssetImage("images/n1.png"), price: "#500"),
+    Data(title: "quantum", img: AssetImage("images/e1.png"), price: "#7,000"),
     Data(title: "Smart", img: AssetImage("images/j1.png"), price: "#15,00"),
   ];
 
@@ -129,7 +129,7 @@ class _DiscoverState extends State<Discover> {
                               ),
                             ],
                           ),
-                          SizedBox(width: 100.0.w),
+                          SizedBox(width: 80.0.w),
                           Icon(
                             Icons.favorite_border_outlined,
                             color: Colors.white,
