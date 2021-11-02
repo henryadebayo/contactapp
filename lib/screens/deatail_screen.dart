@@ -98,7 +98,7 @@ class _DetailsPageState extends State<DetailsPage> {
             ],
           ),
           SizedBox(
-            height: 15.h,
+            height: 25.h,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -111,7 +111,7 @@ class _DetailsPageState extends State<DetailsPage> {
                     color: Colors.black12),
               ),
               SizedBox(
-                width: 10.w,
+                width: 20.w,
               ),
               Container(
                 height: 30.h,
@@ -121,7 +121,7 @@ class _DetailsPageState extends State<DetailsPage> {
                     color: Color(0xffaa0505)),
               ),
               SizedBox(
-                width: 10.w,
+                width: 20.w,
               ),
               Container(
                 height: 30.h,
@@ -131,6 +131,54 @@ class _DetailsPageState extends State<DetailsPage> {
                     color: Colors.black),
               )
             ],
+          ),
+          SizedBox(
+            height: 15.h,
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 15.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "Marvel Smart 2",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 24.sp,
+                  ),
+                ),
+                Container(
+                  height: 50.h,
+                  width: 100.w,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(50.r),
+                      color: Colors.black),
+                  child: Row(
+                    children: [
+                      IconButton(
+                        icon: Icon(
+                          Icons.remove,
+                          color: Colors.white,
+                        ),
+                      ),
+                      Text(
+                        "1",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            fontSize: 17.sp),
+                      ),
+                      IconButton(
+                        icon: Icon(
+                          Icons.add,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
         ],
       ),
