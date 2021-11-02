@@ -48,7 +48,7 @@ class _DetailsPageState extends State<DetailsPage> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
-            height: 500.0,
+            height: 400.0,
             width: double.infinity,
             child: ListView(
               scrollDirection: Axis.horizontal,
@@ -69,25 +69,66 @@ class _DetailsPageState extends State<DetailsPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                height: 20.h,
-                width: 20.w,
+                height: 10.h,
+                width: 15.w,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20.r),
                     color: Colors.black12),
               ),
+              SizedBox(
+                width: 5.w,
+              ),
               Container(
-                height: 20.h,
-                width: 20.w,
+                height: 10.h,
+                width: 30.w,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20.r),
                     color: Colors.black),
               ),
+              SizedBox(
+                width: 5.w,
+              ),
               Container(
-                height: 20.h,
-                width: 20.w,
+                height: 10.h,
+                width: 15.w,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20.r),
                     color: Colors.black12),
+              )
+            ],
+          ),
+          SizedBox(
+            height: 15.h,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                height: 30.h,
+                width: 30.w,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10.r),
+                    color: Colors.black12),
+              ),
+              SizedBox(
+                width: 10.w,
+              ),
+              Container(
+                height: 30.h,
+                width: 30.w,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10.r),
+                    color: Color(0xffaa0505)),
+              ),
+              SizedBox(
+                width: 10.w,
+              ),
+              Container(
+                height: 30.h,
+                width: 30.w,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10.r),
+                    color: Colors.black),
               )
             ],
           ),
