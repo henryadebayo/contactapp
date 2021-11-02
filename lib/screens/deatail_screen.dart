@@ -148,7 +148,7 @@ class _DetailsPageState extends State<DetailsPage> {
                   ),
                 ),
                 Container(
-                  height: 50.h,
+                  height: 40.h,
                   width: 100.w,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50.r),
@@ -180,6 +180,24 @@ class _DetailsPageState extends State<DetailsPage> {
               ],
             ),
           ),
+          TextButton(
+              onPressed: () {},
+              child: Container(
+                height: 50.h,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                    color: Colors.black,
+                    borderRadius: BorderRadius.circular(20.0)),
+                child: Center(
+                  child: Text(
+                    "Add to Cart",
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        fontSize: 17.sp),
+                  ),
+                ),
+              ))
         ],
       ),
     );
