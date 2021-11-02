@@ -15,6 +15,9 @@ class DetailsPage extends StatefulWidget {
 }
 
 class _DetailsPageState extends State<DetailsPage> {
+  bool arth = false;
+  int displayNum = 0;
+
   List<Data> data = [
     Data(title: "Smart", img: AssetImage("images/j2.png"), price: "#15,00"),
     Data(title: "Smart", img: AssetImage("images/e2.png"), price: "#5,000"),
@@ -160,19 +163,29 @@ class _DetailsPageState extends State<DetailsPage> {
                   child: Row(
                     children: [
                       IconButton(
+                        onPressed: () {
+                          setState(() {
+                            displayNum = displayNum - 1;
+                          });
+                        },
                         icon: Icon(
                           Icons.remove,
                           color: Colors.white,
                         ),
                       ),
                       Text(
-                        "1",
+                        displayNum.toString(),
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
                             color: Colors.white,
                             fontSize: 17.sp),
                       ),
                       IconButton(
+                        onPressed: () {
+                          setState(() {
+                            displayNum = displayNum + 1;
+                          });
+                        },
                         icon: Icon(
                           Icons.add,
                           color: Colors.white,
