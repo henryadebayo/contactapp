@@ -2,7 +2,10 @@ import 'package:contactapp/data/data.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:readmore/readmore.dart';
+
+import 'homepage.dart';
 
 class DetailsPage extends StatefulWidget {
   const DetailsPage({Key key}) : super(key: key);
@@ -191,28 +194,39 @@ class _DetailsPageState extends State<DetailsPage> {
                   "PREMIUM DISPLAY: Large 1.55-inch TFT-LCD color touch screen which has 320*360 pixels resolution make the screen clear and bright. The screen brightness can be adjusted, display screen will be lightened up automatically while lifting the wrist. Features different customized displays fo different styles, with the option to choose your own photo for background. Wake up function to easily see time, date, steps, calories and distance. IP68 waterproof, you can wear it when swimming and record data.",
                   // textAlign: TextAlign.center,
                   style: TextStyle(color: Colors.black),
+                  trimLines: 3,
+                  trimMode: TrimMode.Line,
                 ),
               ),
             ),
           ),
-          TextButton(
-              onPressed: () {},
-              child: Container(
-                height: 50.h,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                    color: Colors.black,
-                    borderRadius: BorderRadius.circular(20.0)),
-                child: Center(
-                  child: Text(
-                    "Add to Cart",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                        fontSize: 17.sp),
-                  ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 8.0),
+            child: SizedBox(
+              width: double.infinity,
+              child: TextButton(
+                onPressed: () {
+                  Get.to(
+                    HomePage(),
+                  );
+                },
+                style: ButtonStyle(
+                  side: MaterialStateProperty.all(BorderSide()),
+                  backgroundColor: MaterialStateProperty.all(Colors.black),
+                  foregroundColor: MaterialStateProperty.all(Colors.white),
+                  padding: MaterialStateProperty.all(
+                      EdgeInsets.symmetric(vertical: 14.0.h)),
                 ),
-              ))
+                child: Text(
+                  "Add to Cart",
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                      fontSize: 17.sp),
+                ),
+              ),
+            ),
+          )
         ],
       ),
     );

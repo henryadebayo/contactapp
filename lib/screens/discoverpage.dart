@@ -1,7 +1,10 @@
 import 'package:contactapp/data/data.dart';
+import 'package:contactapp/screens/deatail_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
 
 class Discover extends StatefulWidget {
   const Discover({Key key}) : super(key: key);
@@ -66,20 +69,27 @@ class _DiscoverState extends State<Discover> {
             Container(
               height: 350.h,
               width: 320.w,
-              child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: data.length,
-                  itemBuilder: (context, index) {
-                    return Row(
-                      children: [
-                        imageContainer(
-                          title: data[index].title,
-                          img: data[index].img,
-                        ),
-                        SizedBox(width: 10.0),
-                      ],
-                    );
-                  }),
+              child: GestureDetector(
+                onTap: () {
+                  Get.to(
+                    DetailsPage(),
+                  );
+                },
+                child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: data.length,
+                    itemBuilder: (context, index) {
+                      return Row(
+                        children: [
+                          imageContainer(
+                            title: data[index].title,
+                            img: data[index].img,
+                          ),
+                          SizedBox(width: 10.0),
+                        ],
+                      );
+                    }),
+              ),
             ),
             SizedBox(height: 20.0.h),
             Container(

@@ -2,6 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
+
+import 'discoverpage.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key key}) : super(key: key);
@@ -24,21 +28,28 @@ class _HomePageState extends State<HomePage> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      "Smart",
-                      style: TextStyle(color: Colors.white, fontSize: 60.0.sp),
-                    ),
-                    Text(
-                      "Buy",
-                      style: TextStyle(color: Colors.white, fontSize: 60.0.sp),
-                    ),
+                    Wrap(
+                      direction: Axis.vertical,
+                      children: [
+                        Text(
+                          "Smart",
+                          style:
+                              TextStyle(color: Colors.white, fontSize: 60.0.sp),
+                        ),
+                        Text(
+                          "Buy",
+                          style:
+                              TextStyle(color: Colors.white, fontSize: 40.0.sp),
+                        ),
+                      ],
+                    )
                   ],
                 ),
                 Center(
                   child: Container(
                     height: 470.0,
                     child: Image(
-                      image: AssetImage("images/darkwatch.jpg"),
+                      image: AssetImage("images/j2.png"),
                       fit: BoxFit.fitHeight,
                     ),
                   ),
@@ -51,7 +62,9 @@ class _HomePageState extends State<HomePage> {
                     height: 70.0,
                     width: double.infinity,
                     child: TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.to(Discover());
+                      },
                       style: ButtonStyle(
                         side: MaterialStateProperty.all(BorderSide()),
                         backgroundColor:
