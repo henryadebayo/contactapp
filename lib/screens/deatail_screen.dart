@@ -133,7 +133,7 @@ class _DetailsPageState extends State<DetailsPage> {
             ],
           ),
           SizedBox(
-            height: 15.h,
+            height: 10.h,
           ),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 15.0),
