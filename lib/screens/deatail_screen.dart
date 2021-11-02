@@ -2,6 +2,7 @@ import 'package:contactapp/data/data.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:readmore/readmore.dart';
 
 class DetailsPage extends StatefulWidget {
   const DetailsPage({Key key}) : super(key: key);
@@ -180,13 +181,17 @@ class _DetailsPageState extends State<DetailsPage> {
               ],
             ),
           ),
-          SizedBox(height: 10.0.h),
-          Container(
-            height: 80.0,
-            child: SingleChildScrollView(
-              child: Text(
-                "PREMIUM DISPLAY: Large 1.55-inch TFT-LCD color touch screen which has 320*360 pixels resolution make the screen clear and bright. The screen brightness can be adjusted, display screen will be lightened up automatically while lifting the wrist. Features different customized displays fo different styles, with the option to choose your own photo for background. Wake up function to easily see time, date, steps, calories and distance. IP68 waterproof, you can wear it when swimming and record data.",
-                textAlign: TextAlign.center,
+          SizedBox(height: 5.0.h),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 12.0),
+            child: Container(
+              height: 90.0,
+              child: SingleChildScrollView(
+                child: ReadMoreText(
+                  "PREMIUM DISPLAY: Large 1.55-inch TFT-LCD color touch screen which has 320*360 pixels resolution make the screen clear and bright. The screen brightness can be adjusted, display screen will be lightened up automatically while lifting the wrist. Features different customized displays fo different styles, with the option to choose your own photo for background. Wake up function to easily see time, date, steps, calories and distance. IP68 waterproof, you can wear it when swimming and record data.",
+                  // textAlign: TextAlign.center,
+                  style: TextStyle(color: Colors.black),
+                ),
               ),
             ),
           ),
